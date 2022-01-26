@@ -177,15 +177,15 @@
   ItalicFont=*-Italic,
   BoldFont=*-Bold,
   BoldItalicFont=*-BoldItalic,
-]{Roboto}
+]{Rubik}
 
 \newfontfamily\headerfontlight[
   Path=\@fontdir,
-  UprightFont=*-Thin,
-  ItalicFont=*-ThinItalic,
+  UprightFont=*-Light,
+  ItalicFont=*-LightItalic,
   BoldFont=*-Medium,
   BoldItalicFont=*-MediumItalic,
-]{Roboto}
+]{Rubik}
 
 \newcommand*{\footerfont}{\sourcesanspro}
 \newcommand*{\bodyfont}{\sourcesanspro}
@@ -404,14 +404,14 @@
 \newcommand{\acvHeaderNameDelim}{\space}
 \newcommand{\acvHeaderAfterNameSkip}{.4mm}
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
-\newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
+\newcommand{\acvHeaderAfterAddressSkip}{.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
+\newcommand{\acvSectionTopSkip}{-1mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
 
 
@@ -622,9 +622,9 @@
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#1#3}
-      {\entrypositionstyle{#2} & \entrydatestyle{#4}}%
+      {\entrypositionstyle{#2} & \entrydatestyle{\textbf{#4}}}%
       {\entrytitlestyle{#1} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#2} & \entrydatestyle{#4}}%
+      \entrypositionstyle{#2} & \entrydatestyle{\textbf{#4}}}%
     \ifempty{#5}%
       {}%
       {\\\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}%
