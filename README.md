@@ -13,6 +13,7 @@ Resume / Curriculum Vitae
 Credit
 -------
 The template design is based on:
+  - [seignovert/cv](https://github.com/seignovert/cv)
   - [AwesomeCV](https://github.com/posquit0/Awesome-CV)
   - [Andy Casey CV](https://github.com/andycasey/cv)
 
