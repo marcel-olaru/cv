@@ -60,5 +60,5 @@ jobs:
           tag: ${{ env.RELEASE_TAG }}
           name: ${{ env.RELEASE_NAME }}
           body: ${{ env.RELEASE_BODY }}
-          files: ${{ env.RELEASE_PDF }}:output.pdf
+          files: ${{ env.RELEASE_PDF }}:cv.pdf
           allow_override: true
