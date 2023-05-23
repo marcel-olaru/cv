@@ -46,7 +46,7 @@ jobs:
             echo ::set-env name=RELEASE_TAG::"$NEW_TAG"
             echo ::set-env name=RELEASE_NAME::"$(date +'%Y/%m/%d') - Curriculum Vitae"
             echo ::set-env name=RELEASE_BODY::"$CHANGELOG"
-            echo ::set-env name=RELEASE_PDF::"$(date +'%Y')-Marcel-Olaru.pdf"
+            echo ::set-env name=RELEASE_PDF::"$(date +'%Y')-Marcel-Olaru-"
 
       - name: Retreive PDF
         uses: actions/download-artifact@v3
@@ -61,4 +61,5 @@ jobs:
           name: ${{ env.RELEASE_NAME }}
           body: ${{ env.RELEASE_BODY }}
           files: ${{ env.RELEASE_PDF }}:cv.pdf
+          gzip: false
           allow_override: true
