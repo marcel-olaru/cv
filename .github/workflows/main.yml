@@ -60,6 +60,6 @@ jobs:
           tag: ${{ env.RELEASE_TAG }}
           name: ${{ env.RELEASE_NAME }}
           body: ${{ env.RELEASE_BODY }}
-          files: ${{ env.RELEASE_PDF }}:cv.pdf
+          files: cv.pdf
           gzip: false
           allow_override: true
