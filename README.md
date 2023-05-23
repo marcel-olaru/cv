@@ -7,7 +7,6 @@ Resume / Curriculum Vitae
 
 [download]: https://github.com/seignovert/cv/raw/master/cv.pdf
 
-This repository store the academic resume and curriculum vitae for Benoît Seignovert (Jet Propulsion Laboratory, Pasadena, CA USA).
 
 ![CV 1st page](cv/cv-0.jpg)
 
