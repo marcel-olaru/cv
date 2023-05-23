@@ -1,12 +1,5 @@
 name: Build LaTeX document
-on:
-  push:
-    branches:
-      - master
-    paths:
-      - '**.tex'
-      - '**.cls'
-      - '**.sty'
+on: [push]
 jobs:
   build_latex:
     name: XeLaTeX build
