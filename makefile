@@ -1,8 +1,13 @@
 CC = xelatex
+IMAGE = docker.io/seignovert/latex-cv
 OUTPUT_DIR = .
 OUT_JPG = cv/
 
 main: readme
+
+container:
+	@docker image inspect $(IMAGE) >/dev/null 2>&1 || docker pull $(IMAGE)
+	docker run --rm -v "$$PWD:/latex:Z" -w /latex $(IMAGE) sh -c '$(CC) cv.tex && $(CC) cv.tex'
 
 %.pdf: %.tex data/*.tex
 	$(CC) -output-directory=$(OUTPUT_DIR) $<
