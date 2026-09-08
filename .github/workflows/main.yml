@@ -45,22 +45,23 @@ jobs:
         run: |
             NEW_TAG=$(date +'%Y.%m.%d')
             LAST_TAG=$(git tag --sort=creatordate | tr '\n' ' ' | sed -e "s/ $NEW_TAG //" | tr ' ' '\n | tail -1')
-            CHANGELOG=$(git log --pretty='format:- %s' $LAST_TAG..HEAD)
-
-            # Multilines escape
-            CHANGELOG="${CHANGELOG//'%'/'%25'}"
-            CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
-            CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
-
-            echo "RELEASE_TAG=$NEW_TAG" >> "$GITHUB_ENV"
-            echo "RELEASE_NAME=$(date +'%Y/%m/%d') - Curriculum Vitae" >> "$GITHUB_ENV"
-            echo "RELEASE_BODY=$CHANGELOG" >> "$GITHUB_ENV"
-            echo "RELEASE_PDF=$(date +'%Y')-Marcel-Olaru.pdf" >> "$GITHUB_ENV"
+            {
+              echo "RELEASE_TAG=$NEW_TAG"
+              echo "RELEASE_NAME=$(date +'%Y/%m/%d') - Curriculum Vitae"
+              echo "RELEASE_PDF=$(date +'%Y')-Marcel-Olaru.pdf"
+              echo "RELEASE_BODY<<BODY_EOF"
+              git log --pretty='format:- %s' $LAST_TAG..HEAD
+              echo ""
+              echo "BODY_EOF"
+            } >> "$GITHUB_ENV"
 
       - name: Retrieve PDF
         uses: actions/download-artifact@v4
         with:
           name: pdf
+
+      - name: Rename PDF for release
+        run: mv cv.pdf "$RELEASE_PDF"
 
       - name: Publish release
         uses: softprops/action-gh-release@v2
