@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.12.3)  8 SEP 2026 16:52
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.12.3)  8 SEP 2026 21:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1015,7 +1015,7 @@ LaTeX Font Info:    Font shape `TU/SourceSansPro(1)/m/n' will be
 (Font)              scaled to size 9.0pt on input line 7.
 ) (./data/other.tex
 LaTeX Font Info:    Font shape `TU/SourceSansPro(1)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 9.
+(Font)              scaled to size 9.0pt on input line 6.
 
 Overfull \hbox (10.3128pt too wide) in alignment at lines 3--10
 [] [] 
@@ -1038,11 +1038,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 31953 strings out of 478918
- 627893 string characters out of 5868830
+ 31951 strings out of 478918
+ 627816 string characters out of 5868830
  1118770 words of memory out of 5000000
- 50824 multiletter control sequences out of 15000+600000
- 538400 words of font info for 119 fonts, out of 8000000 for 9000
+ 50823 multiletter control sequences out of 15000+600000
+ 538392 words of font info for 118 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  121i,11n,124p,521b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
 
