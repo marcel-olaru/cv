@@ -16,12 +16,9 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
 
-      - name: LaTeX compilation
-        uses: dante-ev/latex-action@2026-A
-        with:
-          root_file: cv.tex
-          compiler: xelatex
-          args: -interaction=nonstopmode -file-line-error
+      - name: Build CV
+        run: |
+          docker run --rm -v "$PWD:/latex:Z" -w /latex docker.io/seignovert/latex-cv sh -c 'xelatex cv.tex && xelatex cv.tex'
 
       - name: Save PDF
         uses: actions/upload-artifact@v4
