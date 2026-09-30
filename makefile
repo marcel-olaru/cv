@@ -7,9 +7,9 @@ main: readme
 
 container:
 	@docker image inspect $(IMAGE) >/dev/null 2>&1 || docker pull $(IMAGE)
-	docker run --rm -v "$$PWD:/latex:Z" -w /latex $(IMAGE) sh -c '$(CC) cv.tex && $(CC) cv.tex'
+	docker run --rm -v "$$PWD:/latex:Z" -w /latex $(IMAGE) sh -c '$(CC) cv.tex && $(CC) cv.tex && $(CC) cv-de.tex && $(CC) cv-de.tex'
 
-%.pdf: %.tex data/*.tex
+%.pdf: %.tex data/*/*.tex
 	$(CC) -output-directory=$(OUTPUT_DIR) $<
 	$(CC) -output-directory=$(OUTPUT_DIR) $<
 
@@ -18,7 +18,7 @@ container:
 	@mkdir -p $(OUT_JPG)
 	@convert -density 300 $< -quality 70 $(OUT_JPG)$@
 
-readme: cv.jpg
+readme: cv.jpg cv-de.jpg
 	@echo "Create a README in $(OUT_JPG)"
 	@ls $(OUT_JPG)*.jpg | xargs -n1 basename | awk '{print "!["$$1"]("$$1")"}' > $(OUT_JPG)README.md
 

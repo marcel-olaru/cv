@@ -1,7 +1,8 @@
-% !TeX root = cv.tex
+% !TeX root = cv-de.tex
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 %
+% German version of the CV (Lebenslauf)
 % Based on Awesome CV LaTeX Template for CV/Resume
 % from Claud D. Park <posquit0.bj@gmail.com>
 % Downloaded from: https://github.com/posquit0/Awesome-CV
@@ -19,6 +20,12 @@
 % A4 paper size by default, use 'letterpaper' for US letter
 \documentclass[10pt, a4paper]{templates/awesome-cv}
 
+% German hyphenation patterns
+\usepackage[ngerman]{babel}
+
+% Slightly tighter section spacing to keep the German version on one page
+\renewcommand{\acvSectionContentTopSkip}{0.5mm}
+
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.5cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
@@ -29,15 +36,6 @@
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
 \colorlet{awesome}{awesome-darknight}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
-
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -50,11 +48,11 @@
 %	PERSONAL INFORMATION
 %	Imported separately[private content]
 %-------------------------------------------------------------------------------
-\input{data/en/infos.tex}
+\input{data/de/infos.tex}
 
 \lfooter{\today}
-\cfooter{M. Olaru~~~·~~~Curriculum Vitae}
-\rfooter{page \thepage/\thepage}
+\cfooter{M. Olaru~~~·~~~Lebenslauf}
+\rfooter{Seite \thepage/\thepage}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -71,20 +69,9 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\input{data/en/employment.tex}
-\input{data/en/education.tex}
-%\input{data/en/internship.tex}
-%\clearpage
-%\input{data/en/publications.tex}
-%\clearpage
-%\input{data/en/seminars.tex}
-%\input{data/en/training.tex}
-%\input{data/en/honors.tex}
-%\input{data/en/outreach.tex}
-%\clearpage
-%\input{data/en/community.tex}
-\input{data/en/skills.tex}
-%\input{data/en/activities.tex}
-\input{data/en/other.tex}
+\input{data/de/employment.tex}
+\input{data/de/education.tex}
+\input{data/de/skills.tex}
+\input{data/de/other.tex}
 %-------------------------------------------------------------------------------
 \end{document}
